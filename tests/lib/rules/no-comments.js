@@ -10,7 +10,7 @@ const ruleTester = new RuleTester();
 ruleTester.run("no-comments", rule, {
   valid: [
     {
-      code: "const button = styled.button`/* position */ position: absolute; /* size */ width: 300px;`",
+      code: "const button = styled.button` position: absolute; width: 300px;`",
       parserOptions,
     },
     {
@@ -49,12 +49,12 @@ ruleTester.run("no-comments", rule, {
   invalid: [
     {
       code: `const button = styled.button\`
-      /* position */
-      position: absolute;
-      /* size */
-      width: 300px;
-      /* second line */
-      background: red;\``,
+        /* position */
+        position: absolute;
+        /* size */
+        width: 300px;
+        /* second line */
+        background: red;\``,
       parserOptions,
       errors: [
         {
@@ -62,18 +62,18 @@ ruleTester.run("no-comments", rule, {
         },
       ],
       output: `const button = styled.button\`
-      position: absolute;
-      width: 300px;
-      background: red;\``,
+        position: absolute;
+        width: 300px;
+        background: red;\``,
     },
     {
       code: `const button = styled.button\`
-      /* unknown */
-      position: absolute;
-      width: 300px;
-      /* test */
-      height: 200px;
-      left: 0;\``,
+        /* unknown */
+        position: absolute;
+        width: 300px;
+        /* test */
+        height: 200px;
+        left: 0;\``,
       parserOptions,
       errors: [
         {
@@ -81,10 +81,29 @@ ruleTester.run("no-comments", rule, {
         },
       ],
       output: `const button = styled.button\`
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      left: 0;\``,
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        left: 0;\``,
+    },
+    {
+      code: `const button = styled.button\`
+        /* unknown */
+        position: absolute;
+        width: 300px; /* comment after */
+        height: 200px;
+        left: 0;\``,
+      parserOptions,
+      errors: [
+        {
+          messageId: "no-comments",
+        },
+      ],
+      output: `const button = styled.button\`
+        position: absolute;
+        width: 300px; 
+        height: 200px;
+        left: 0;\``,
     },
   ],
 });
