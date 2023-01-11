@@ -12,7 +12,7 @@ module.exports = {
   resize: "position",
   clip: "position",
   visibility: "position",
-  
+
   display: "display",
   "flex-flow": "display",
   "flex-direction": "display",
