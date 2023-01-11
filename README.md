@@ -42,7 +42,14 @@ Then configure the rules you want to use under the rules section.
 ## Rules
 
 <!-- begin auto-generated rules list -->
-TODO: Run eslint-doc-generator to generate the rules list.
+
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+
+| Name                                     | Description                                                   | 🔧 |
+| :--------------------------------------- | :------------------------------------------------------------ | :- |
+| [no-comments](docs/rules/no-comments.md) | Styled Component should not have comments in their definition | 🔧 |
+| [sort](docs/rules/sort.md)               | Styled Component's css properties should be sorted            | 🔧 |
+
 <!-- end auto-generated rules list -->
 
 

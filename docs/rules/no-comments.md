@@ -1,16 +1,17 @@
-# Comments are removed from Styled Component definitions. (no-comments)
+# Styled Component should not have comments in their definition (`styled-components-css/no-comments`)
 
-Please describe the origin of the rule here.
+Disallow comments inside styled component's css code.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+const Comp = styled.div`
+  /* hello world */
+  position: absolute;
+`;
 
 ```
 
@@ -18,14 +19,12 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+const Comp = styled.div`
+  position: absolute;
+`;
 
 ```
 
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+When you want to allow comments inside the Styled Component's css code.
