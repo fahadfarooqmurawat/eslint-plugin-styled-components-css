@@ -22,34 +22,23 @@ Add `styled-components-css` to the plugins section of your `.eslintrc` configura
 
 ```json
 {
-    "plugins": [
-        "styled-components-css"
-    ]
+  "plugins": ["styled-components-css"]
 }
 ```
-
 
 Then configure the rules you want to use under the rules section.
 
 ```json
 {
-    "rules": {
-        "styled-components-css/rule-name": 2
-    }
+  "rules": {
+    "styled-components-css/rule-name": 2
+  }
 }
 ```
 
 ## Rules
 
-<!-- begin auto-generated rules list -->
-
-🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
-
-| Name                                     | Description                                                   | 🔧 |
-| :--------------------------------------- | :------------------------------------------------------------ | :- |
-| [no-comments](docs/rules/no-comments.md) | Styled Component should not have comments in their definition | 🔧 |
-| [sort](docs/rules/sort.md)               | Styled Component's css properties should be sorted            | 🔧 |
-
-<!-- end auto-generated rules list -->
-
-
+| Name                                     | Description                                            | 🔧  |
+| :--------------------------------------- | :----------------------------------------------------- | :-- |
+| [no-comments](docs/rules/no-comments.md) | Styled Component should not have comments in their css | 🔧  |
+| [sort](docs/rules/sort.md)               | Styled Component's css declarations should be sorted   | 🔧  |
