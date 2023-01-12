@@ -1,6 +1,4 @@
-const categoriesMap = require("../utils/categories-map.js");
-
-const sortOrder = Object.keys(categoriesMap);
+const { sortOrder } = require("../utils/declaration-categories.js");
 
 module.exports = function areDeclarationsSorted(declarations) {
   const order = declarations.slice().sort((a, b) => {
