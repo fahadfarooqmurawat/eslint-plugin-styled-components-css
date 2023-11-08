@@ -13,10 +13,24 @@ const Comp = styled.div`
 `;
 ```
 
+```js
+const Comp = styled.div`
+  /* background-color: red; */
+  position: absolute;
+`;
+```
+
 Examples of **correct** code for this rule:
 
 ```js
 const Comp = styled.div`
+  position: absolute;
+`;
+```
+
+```js
+const Comp = styled.div`
+  background-color: red;
   position: absolute;
 `;
 ```

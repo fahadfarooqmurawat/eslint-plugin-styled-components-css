@@ -69,5 +69,65 @@ ruleTester.run("sort", rule, {
       output:
         "const button = styled.button`position: absolute; left: 0; height: 200px; width: 300px;`",
     },
+    {
+      code: `const button = styled.button\`
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        bottom: 10px;
+        background-color: red;
+        color: orange;
+        border-radius: 1px;
+        left: 0;\`
+      `,
+      parserOptions,
+      errors: [
+        {
+          messageId: "sort",
+        },
+      ],
+      output: `const button = styled.button\`
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+
+        height: 200px;
+        width: 300px;
+
+        background-color: red;
+        color: orange;
+        border-radius: 1px;\`
+      `,
+    },
+    {
+      code: `const button = styled.button\`
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        height: 200px;
+        width: 300px;
+        background-color: red;
+        color: orange;
+        border-radius: 1px;\`
+      `,
+      parserOptions,
+      errors: [
+        {
+          messageId: "sort",
+        },
+      ],
+      output: `const button = styled.button\`
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+
+        height: 200px;
+        width: 300px;
+
+        background-color: red;
+        color: orange;
+        border-radius: 1px;\`
+      `,
+    },
   ],
 });

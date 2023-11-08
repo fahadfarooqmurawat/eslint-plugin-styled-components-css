@@ -158,6 +158,11 @@ const declarationCategories = {
 };
 
 module.exports = {
+  getCategory: (propName) => {
+    return Object.keys(declarationCategories).find((cat) => {
+      return declarationCategories[cat].indexOf(propName) > -1;
+    })
+  },
   sortOrder: Object.values(declarationCategories).reduce(
     (prev, curr) => [...prev, ...curr],
     []
